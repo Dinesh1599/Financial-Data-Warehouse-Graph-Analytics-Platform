@@ -1,0 +1,8 @@
+account_id,customer_id,type,currency,opened_at,status,branch_id
+A-1001,C-001,checking ,usd,2021-01-01T10:00:00Z, active,B-01
+A-1002,C-001,Brokerage, USD,01/15/2021,Active,B-02
+A-1003,C-002,Savings,$usd,2020/12/01 08:30,ACTIVE,B-01
+A-1004,C-003,Brokerage,eur,12-02-2021,,B-03
+A-1005,c-004,Checking,Usd,2021-03-05,active ,B-03
+A-1005,c-004,Checking,Usd,2021-03-05,active ,B-03
+A-1006,C-009,Savings,USD,03-10-2021,Active,B-99

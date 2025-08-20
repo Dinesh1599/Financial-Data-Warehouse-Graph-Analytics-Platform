@@ -1,0 +1,51 @@
+customer_id,name,dob,kyc_status,email,phone,address,country
+C-1001,Crystal Brown,2001-02-18,BLOCKED,alexanderjohn@gmail.com,7945732444,"747 Anderson Land Suite 729, Melanieland, ME 38360",Belarus
+C-1002,Garrett White,1949-05-19,BLOCKED,santosvictor@gmail.com,559-154-0481x271,"286 Holly Forges, Williamsville, NJ 13433",Austria
+C-1003,Christina Hood,1953-08-30,BLOCKED,amyalexander@ramos.com,607-677-3798x203,"77134 Cook Dam, West Aliciafurt, OR 93885",Georgia
+C-1004,Eric King,2002-05-23,BLOCKED,jenniferfarley@gmail.com,668-212-0496x963,"42183 Christopher Square Suite 893, Port Emilystad, AL 70608",Romania
+C-1005,Ashley Clark,1981-03-19,PENDING,timothy74@nixon.com,191-115-4050x027,"322 Steven Alley, Lake Joseph, WI 09804",Faroe Islands
+C-1006,Mike Spencer,1972-01-10,VERIFIED,stephanie48@yahoo.com,(234)498-6346x6916,"38404 Moore Parkway, South Candiceburgh, IA 31259",Congo
+C-1007,Anthony Douglas,1999-01-25,BLOCKED,jason94@gmail.com,398-944-9696x30245,"PSC 9400, Box 5647, APO AP 41589",Macedonia
+C-1008,Jennifer Kelley,1977-09-22,VERIFIED,jonathan42@williams.org,(144)029-1220,"191 Nolan Green, Lake Allison, KS 28840",Mongolia
+C-1009,Brandon Vincent,1988-10-03,BLOCKED,yrichardson@morgan-ramsey.com,(870)229-9209x7989,"89564 Myers Valley Suite 412, Lake Alexanderton, FL 29306",Namibia
+C-1010,Colleen Stephens,1969-05-18,PENDING,sheri59@hotmail.com,611.816.0611,"312 Robert Flats, Whitetown, AK 80704",Botswana
+C-1011,Steven Bender,1973-06-18,VERIFIED,priscilladavis@robinson-simpson.com,(397)509-6040,"4115 Patricia Throughway, Port Jessica, PA 62055",Guam
+C-1012,Morgan Richardson,1946-10-20,PENDING,davidmahoney@yahoo.com,038.013.9232x9690,"80590 Todd Land Suite 288, Colleenborough, NE 87230",Iran
+C-1013,Dustin Buckley,2002-08-10,BLOCKED,jgraham@hotmail.com,7957726086,"67208 Ross Place, Kennethport, WI 99436",United States of America
+C-1014,Randall Reyes,1980-03-18,PENDING,patricia73@gross.com,(220)487-3292x6477,"7311 Lisa Brooks, South Richardmouth, KS 85142",Netherlands
+C-1015,Matthew Smith,1966-11-01,VERIFIED,gary08@hotmail.com,548-348-7908x200,"03187 Shawna Run, New Brittneyton, OK 57065",Ireland
+C-1016,Deborah Le,1987-09-10,VERIFIED,james79@kemp.com,001-647-762-6318,"61642 Michael Flats Suite 805, Port Gregorystad, TX 24901",Madagascar
+C-1017,Margaret Stark,1969-08-04,VERIFIED,ureed@walsh-olson.com,541-086-3736,"045 John Ridges Suite 045, Port Emily, IA 83227",Thailand
+C-1018,Danielle Parsons,1973-02-15,VERIFIED,michaelmcclure@bautista.biz,+1-042-019-8037,"1226 Martinez Mountains Apt. 319, Grahamview, AK 03555",El Salvador
+C-1019,Ryan Beck,1969-03-25,BLOCKED,tiffanydaniel@yahoo.com,028-555-2471x1683,"5728 Cassandra Ports Suite 427, Andersonfurt, WI 97717",Guam
+C-1020,Tiffany Franklin,2002-01-29,BLOCKED,zfuller@wallace-blake.com,(570)066-7068x0666,"246 Alison Ridges Suite 845, Fullerchester, SC 08076",Mayotte
+C-1021,Jeremy Miranda,1947-07-22,PENDING,gedwards@ellis.com,(895)522-7402x96747,"429 Scott Springs, Laurietown, WI 96867",Philippines
+C-1022,Samuel Adams,1950-04-17,BLOCKED,hendersonsydney@mitchell.com,+1-834-809-7016x77273,"6952 Butler View Suite 591, Angelafurt, NH 31440",Monaco
+C-1023,Eric White,1999-02-08,VERIFIED,kjennings@gmail.com,001-693-326-1065x550,"202 Duncan Mountains, New Nicholasburgh, IL 39942",Belgium
+C-1024,Lisa Garza,1975-03-30,BLOCKED,rhutchinson@yahoo.com,001-066-547-7731,"256 Larry Mountains Suite 821, Harrismouth, MD 14363",Portugal
+C-1025,Megan Jones,1957-10-30,VERIFIED,fpatel@stone-wallace.biz,001-520-441-5934x290,"619 Smith Islands Suite 934, East Jamie, DC 96017",United States Virgin Islands
+C-1026,Andrew Johnson,1980-02-12,PENDING,humphreyamanda@yahoo.com,001-800-555-9515x60290,"6171 Lance Branch Apt. 821, Salinasfort, MO 29126",United Arab Emirates
+C-1027,Denise Nguyen,2007-07-29,PENDING,xnorman@myers.com,(799)163-9533x166,"USNV Rice, FPO AA 17219",El Salvador
+C-1028,Sergio Hoffman,2006-08-08,BLOCKED,mauricewilkins@young.com,049-320-4248x889,"9662 Michael Rapid, Lake Jennifershire, WA 88263",Norway
+C-1029,Rhonda Parks,1992-11-27,PENDING,gpatterson@yahoo.com,241-502-1916,"5497 Jennifer Streets Apt. 630, North Melinda, WA 74599",Peru
+C-1030,Jennifer Shaffer,1967-09-19,PENDING,garymiller@yahoo.com,+1-569-322-3793,"7750 Hall Mill, Brandytown, FL 90622",Lao People's Democratic Republic
+C-1031,Timothy Miller,1946-04-22,BLOCKED,gmorris@hotmail.com,001-714-499-1860x9189,"31731 Cody Island, Williamsfurt, UT 85531",Liechtenstein
+C-1032,Phillip Nichols,1949-02-01,BLOCKED,davieschristian@gmail.com,870-114-2898x57932,"022 Eric Fall, Williamsbury, TN 96538",San Marino
+C-1033,Pamela Peterson,1978-09-17,VERIFIED,jason88@holt.net,(100)673-2329x0537,"PSC 5680, Box 4468, APO AP 78764",Uruguay
+C-1034,Jacob Johnson,2005-05-01,PENDING,belindaphillips@gmail.com,+1-295-651-6711x7105,"752 Abigail Route, South Joshuamouth, TX 40415",Canada
+C-1035,Amanda Andrews,1978-01-31,BLOCKED,mfleming@fernandez-palmer.biz,068.590.1493,"85051 Kayla Junction, Maryberg, NY 34026",Niue
+C-1036,Anthony Hahn,1952-09-15,PENDING,elliskevin@ramos.com,505-652-4775,"8877 Tony Trace Apt. 463, South Vanessachester, IL 68074",Honduras
+C-1037,Penny Dennis,1976-02-01,VERIFIED,robingonzalez@hernandez-hurst.biz,+1-079-185-9070x003,"5417 Simon Shores, Brendaville, TX 52639",Cayman Islands
+C-1038,Erica Lynch,1994-09-23,BLOCKED,smithjacob@yahoo.com,(405)799-1899x496,"Unit 5954 Box 4419, DPO AA 49825",Barbados
+C-1039,Sabrina Jones,2003-06-12,BLOCKED,daniellecarpenter@bowen.com,001-490-708-6440x85807,"USCGC Hancock, FPO AP 24492",French Guiana
+C-1040,Erica Bowen,1952-05-27,BLOCKED,vcastillo@gmail.com,(355)708-3694,"3542 Mclaughlin Center, Craigborough, DC 60521",Egypt
+C-1041,Deborah Frye,1957-03-18,BLOCKED,jeffreyjohnson@freeman.com,(583)339-4140,"27058 Randy Lights Apt. 792, New Christinamouth, OH 74165",Greece
+C-1042,Victor Camacho,1997-05-14,PENDING,ann09@gmail.com,(796)543-2163x305,"378 Stokes Tunnel, Lorettashire, OK 47216",Nauru
+C-1043,Carl Gray,1964-08-07,PENDING,martinezlynn@yahoo.com,(116)241-3110,"887 Malone Vista, North Jennifer, NY 59771",Cayman Islands
+C-1044,Robert Brown,1955-10-25,BLOCKED,cherylortiz@pollard.com,001-848-993-3288x1614,"Unit 6306 Box 8940, DPO AE 70783",Liberia
+C-1045,Kristin Edwards PhD,1952-09-14,BLOCKED,christophermccarty@carpenter.com,157.398.8857x653,"9267 Harrell Views, Edwardsside, WA 21231",Bulgaria
+C-1046,Todd Rubio,1977-07-30,VERIFIED,eric69@gmail.com,001-123-688-4438x315,"408 Roger Oval, Lake Rogerhaven, OR 41792",Hungary
+C-1047,Tracy Parker,1962-10-18,VERIFIED,kanderson@gmail.com,770-459-7151,"79386 Clark Parkway Suite 673, Port Amandachester, MT 32625",Jordan
+C-1048,Sarah Holden,1998-06-08,PENDING,ncunningham@hotmail.com,3711243359,"1342 Smith Corners, Haleside, NJ 41930",Ukraine
+C-1049,Amber Potter,1954-10-11,BLOCKED,steven12@coleman.org,+1-691-257-8902,"804 Jessica Well, South Paul, DC 01786",Indonesia
+C-1050,April Ruiz,1949-04-23,BLOCKED,erica81@hotmail.com,+1-620-048-4970,"372 Johnson Spur Suite 113, North Matthew, SC 85678",Poland

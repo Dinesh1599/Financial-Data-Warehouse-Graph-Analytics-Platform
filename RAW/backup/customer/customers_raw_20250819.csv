@@ -1,0 +1,7 @@
+customer_id,name,dob,kyc_status,email,phone,address,country
+c-001,  alice   johnson ,1/5/1990,approved ,ALICE.JOHNSON@Email.com , (312) 555-0100,123 Main St,usa
+C-002,Bob Lee,5/12/1985,Pending,bob.lee@example.com,312555-0101,45 River Rd,US
+C-003,carol O'Neil,,APPROVED,carol.oneil@Example.Com,,  9  Oak Ave  ,United States
+C-003,carol O'Neil,,APPROVED,carol.oneil@Example.Com,,  9  Oak Ave  ,United States
+c-004,DAN   SMITH,7/30/1988,denied, dan.smith@example.com,312.555.0103,77 Pine Blvd,U.S.A.
+C-005,Eve   Zhang,7/31/1992,Approved,eve+spam@EXAMPLE.com,5550104,1 First St,usa 
