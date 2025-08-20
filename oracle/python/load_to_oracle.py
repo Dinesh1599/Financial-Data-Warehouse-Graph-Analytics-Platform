@@ -64,8 +64,7 @@ def load_customers(cur, path):
         WHEN NOT MATCHED THEN INSERT (customer_id,name,dob,kyc,email,phone,address,country)
              VALUES (s.customer_id,s.name,s.dob,s.kyc,s.email,s.phone,s.address,s.country)
     """, rows)
-
-    
+   
 def load_accounts(cur, path):
     df = pd.read_csv(path)
     df = df.where(pd.notnull(df), None)
@@ -73,15 +72,15 @@ def load_accounts(cur, path):
     cur.executemany("""
         MERGE INTO dim_account d
         USING (SELECT :account_id AS account_id, :customer_id AS customer_id,
-                      :type AS type, :status AS status,
-                      TO_DATE(:opened_on,'YYYY-MM-DD') AS opened_on,
+                      :type AS type, :status AS status, :currency AS currency, :balance as balance,
+                      TO_DATE(:opened_at,'YYYY-MM-DD"T"HH24:MI:SS') AS opened_at,
                       :branch_id AS branch_id FROM dual) s
         ON (d.account_id = s.account_id)
         WHEN MATCHED THEN UPDATE SET
              customer_id=s.customer_id, type=s.type, status=s.status,
-             opened_on=s.opened_on, branch_id=s.branch_id
-        WHEN NOT MATCHED THEN INSERT (account_id,customer_id,type,status,opened_on,branch_id)
-             VALUES (s.account_id,s.customer_id,s.type,s.status,s.opened_on,s.branch_id)
+             opened_at=s.opened_at, branch_id=s.branch_id, currency=s.currency, balance=s.balance
+        WHEN NOT MATCHED THEN INSERT (account_id,customer_id,type,status,opened_at,branch_id,currency,balance)
+             VALUES (s.account_id,s.customer_id,s.type,s.status,s.opened_at,s.branch_id,s.currency,s.balance)
     """, rows)
 
 def load_txns(cur, path):
@@ -90,24 +89,24 @@ def load_txns(cur, path):
     rows = df.to_dict(orient="records")
     cur.executemany("""
         MERGE INTO fact_txn f
-        USING (SELECT :txn_id AS txn_id, :account_id AS account_id,
-                      :amount AS amount, :currency AS currency,
-                      TO_TIMESTAMP_TZ(:ts,'YYYY-MM-DD"T"HH24:MI:SSFFTZH:TZM') AS ts_utc,
-                      :merchant AS merchant FROM dual) s
+        USING (SELECT :txn_id AS txn_id, :src_account_id AS src_account_id, :dst_account_id as dest_account_id,
+                      :amount AS amount, :currency AS currency, :channel as channel,
+                      TO_TIMESTAMP(:ts,'YYYY-MM-DD"T"HH24:MI:SS') AS timestamp,
+                      :status AS status FROM dual) s
         ON (f.txn_id = s.txn_id)
         WHEN MATCHED THEN UPDATE SET
-             account_id=s.account_id, amount=s.amount, currency=s.currency,
-             ts_utc=s.ts_utc, merchant=s.merchant
-        WHEN NOT MATCHED THEN INSERT (txn_id,account_id,amount,currency,ts_utc,merchant)
-             VALUES (s.txn_id,s.account_id,s.amount,s.currency,s.ts_utc,s.merchant)
+             src_account_id=s.src_account_id, dest_account_id=s.dest_account_id, amount=s.amount, currency=s.currency, channel=s.channel,
+             timestamp=s.timestamp, status=s.status
+        WHEN NOT MATCHED THEN INSERT (txn_id,src_account_id, dest_account_id,amount,currency, channel,timestamp,status)
+             VALUES (s.txn_id,s.src_account_id, s.dest_account_id,s.amount,s.currency, s.channel,s.timestamp,s.status)
     """, rows)
 
 def main():
     with oracledb.connect(user=USER, password=PWD, dsn=DSN) as con:
         cur = con.cursor()
-        load_customers(cur, CUSTOMER_CSV)
-        # load_accounts(cur, ACCOUNT_CSV)
-        # load_txns(cur, TXN_CSV)
+        #load_customers(cur, CUSTOMER_CSV)
+        #load_accounts(cur, ACCOUNT_CSV)
+        load_txns(cur, TXN_CSV)
         con.commit()
         print("Data loaded successfully into Oracle!")
 
