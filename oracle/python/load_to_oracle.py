@@ -22,15 +22,40 @@ txn_source_path = "./clean/txn"
 txn_filename = os.listdir(txn_source_path)[0]   
 TXN_CSV  = os.path.join(txn_source_path,txn_filename)
 
+def load_customers_debug(cur, path):
+    df = pd.read_csv(path)
+    df = df.where(pd.notnull(df), None)  # replace NaN with None
+    rows = df.to_dict(orient="records")
+    for i, row in enumerate(rows, start=1):
+        try:
+            cur.execute("""
+                MERGE INTO dim_customer d
+                USING (SELECT :customer_id AS customer_id, :name AS name,
+                              TO_DATE(:dob,'YYYY-MM-DD') AS dob,
+                              :kyc AS kyc, :email AS email, :phone AS phone,
+                              :address AS address, :country AS country FROM dual) s
+                ON (d.customer_id = s.customer_id)
+                WHEN MATCHED THEN UPDATE SET
+                     name=s.name, dob=s.dob, kyc=s.kyc, email=s.email,
+                    phone=s.phone, address=s.address, country=s.country
+                WHEN NOT MATCHED THEN INSERT (customer_id,name,dob,kyc,email,phone,address,country)
+                    VALUES (s.customer_id,s.name,s.dob,s.kyc,s.email,s.phone,s.address,s.country)
+            """, row)
+        except Exception as e:
+            print(f"❌ Error on row {i}: {row}")
+            print(e)
+            break
+
 def load_customers(cur, path):
     df = pd.read_csv(path)
+    df["phone"] = pd.to_numeric(df["phone"]).astype("Int64")
     df = df.where(pd.notnull(df), None)  # replace NaN with None
     rows = df.to_dict(orient="records")
     cur.executemany("""
         MERGE INTO dim_customer d
         USING (SELECT :customer_id AS customer_id, :name AS name,
                       TO_DATE(:dob,'YYYY-MM-DD') AS dob,
-                      :kyc AS kyc, :email AS email, :phone AS phone,
+                      :kyc_status AS kyc, :email AS email, :phone AS phone,
                       :address AS address, :country AS country FROM dual) s
         ON (d.customer_id = s.customer_id)
         WHEN MATCHED THEN UPDATE SET
@@ -40,6 +65,7 @@ def load_customers(cur, path):
              VALUES (s.customer_id,s.name,s.dob,s.kyc,s.email,s.phone,s.address,s.country)
     """, rows)
 
+    
 def load_accounts(cur, path):
     df = pd.read_csv(path)
     df = df.where(pd.notnull(df), None)
