@@ -26,14 +26,14 @@ This mirrors real-world Data Engineering + Oracle DBA responsibilities, with han
                        │
                  Python + Pandas
                        │
-        ┌──────────────┴───────────────┐
+        ┌──────────────┴────────────────┐
         │                               │
    Oracle XE (SQL)                  Neo4j (Graph)
   - Fact/Dim Schema                 - Customer → Account → Txn
   - Partitioning, Indexes           - Country relationships
   - Materialized Views              - Fraud/AML detection patterns
         │                               │
-        └──────────────┬───────────────┘
+        └──────────────┬────────────────┘
                        │
                  Apache Airflow DAG
             (Automated ETL + Loading Flow)
@@ -234,6 +234,7 @@ ORDER BY total_txn DESC
 LIMIT 10;
 ```
 <img width="582" height="599" alt="image" src="https://github.com/user-attachments/assets/3f91c31e-1b7b-46be-91e1-8dec79a0fd9b" />
+
 
 
 
