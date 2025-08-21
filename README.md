@@ -2,7 +2,7 @@
 
 ## 📌 Project Summary
 - **What it is:** a dual‑target pipeline that loads the same cleaned data into **Oracle** (star schema) and **Neo4j** (graph), then demonstrates **Oracle tuning** (partitioning, indexes, MV) with **before/after evidence**.
-- **Why it’s relevant:** mirrors common enterprise patterns in financial data platforms; aligns with job‑description skills like **Oracle performance**, **AWR/Advisors mindset**, and **scalable data infrastructure**.
+- **Why it’s relevant:** mirrors common enterprise patterns in financial data platforms; aligns with skills like **Oracle performance**, **AWR/Advisors mindset**, and **scalable data infrastructure**.
 - **What you’ll see:** reproducible setup via Docker, named‑bind pandas loaders, SQL Developer workflow for baselines, and graph queries for relationship insights.
 
 The workflow covers:
@@ -234,6 +234,7 @@ ORDER BY total_txn DESC
 LIMIT 10;
 ```
 <img width="582" height="599" alt="image" src="https://github.com/user-attachments/assets/3f91c31e-1b7b-46be-91e1-8dec79a0fd9b" />
+
 
 
 
