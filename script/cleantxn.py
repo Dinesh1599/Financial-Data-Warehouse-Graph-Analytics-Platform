@@ -56,7 +56,7 @@ def main():
         transactions_raw = pd.read_csv(source_path+filename)
         transactions = clean_transactions(transactions_raw)
         today = datetime.datetime.now().strftime("%Y%m%d") 
-        transactions.to_csv(f"../clean/txn/transaction{today}.csv",index=False)
+        transactions.to_csv(f"./clean/txn/transaction{today}.csv",index=False)
         print("CLEAN files written:")
         print(f"  - txn.csv:    {len(transactions)} rows")
 

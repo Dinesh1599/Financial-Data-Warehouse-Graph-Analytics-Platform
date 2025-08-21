@@ -1,0 +1,36 @@
+
+PLAN_TABLE_OUTPUT                                                                                                                                                                                       
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Plan hash value: 4168297139
+ 
+-------------------------------------------------------------------------------------------------------------
+| Id  | Operation                     | Name        | Rows  | Bytes | Cost (%CPU)| Time     | Pstart| Pstop |
+-------------------------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT              |             |     5 |   290 |    30   (4)| 00:00:01 |       |       |
+|*  1 |  HASH JOIN                    |             |     5 |   290 |    30   (4)| 00:00:01 |       |       |
+|   2 |   MERGE JOIN                  |             |     6 |   282 |    27   (4)| 00:00:01 |       |       |
+|   3 |    TABLE ACCESS BY INDEX ROWID| DIM_ACCOUNT |    50 |   550 |     2   (0)| 00:00:01 |       |       |
+|   4 |     INDEX FULL SCAN           | SYS_C008310 |    50 |       |     1   (0)| 00:00:01 |       |       |
+|*  5 |    SORT JOIN                  |             |     6 |   216 |    25   (4)| 00:00:01 |       |       |
+|   6 |     PARTITION RANGE ITERATOR  |             |     6 |   216 |    24   (0)| 00:00:01 |     1 |    46 |
+|*  7 |      TABLE ACCESS FULL        | FACT_TXN    |     6 |   216 |    24   (0)| 00:00:01 |     1 |    46 |
+|   8 |   TABLE ACCESS FULL           | DIM_ACCOUNT |    50 |   550 |     3   (0)| 00:00:01 |       |       |
+-------------------------------------------------------------------------------------------------------------
+ 
+Predicate Information (identified by operation id):
+---------------------------------------------------
+ 
+   1 - access("S"."ACCOUNT_ID"="T"."SRC_ACCOUNT_ID")
+       filter("T"."CURRENCY"<>"S"."CURRENCY" OR "T"."CURRENCY"<>"D"."CURRENCY")
+   5 - access("D"."ACCOUNT_ID"="T"."DEST_ACCOUNT_ID")
+       filter("D"."ACCOUNT_ID"="T"."DEST_ACCOUNT_ID")
+   7 - filter("T"."TIMESTAMP"<=TIMESTAMP' 2023-09-12 23:59:59.000000000' AND 
+              "T"."TIMESTAMP">=TIMESTAMP' 1970-01-01 00:00:00.000000000')
+ 
+Note
+-----
+   - this is an adaptive plan
+
+29 rows selected. 
+
+Elapsed: 00:00:00.033

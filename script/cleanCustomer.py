@@ -61,7 +61,7 @@ def main():
         df = pd.read_csv(source_path+filename)
         customers = clean_customers(df)
         today = datetime.datetime.now().strftime("%Y%m%d") 
-        customers.to_csv(f"../clean/customer/customer_{today}.csv",index=False) 
+        customers.to_csv(f"./clean/customer/customer_{today}.csv",index=False) 
         print("CLEAN files written:")
         print(f"  - customers.csv:    {len(customers)} rows")
         

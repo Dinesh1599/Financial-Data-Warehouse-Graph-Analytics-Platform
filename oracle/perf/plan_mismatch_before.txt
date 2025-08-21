@@ -1,0 +1,35 @@
+
+PLAN_TABLE_OUTPUT                                                                                                                                                                                       
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Plan hash value: 1576529066
+ 
+----------------------------------------------------------------------------------------------
+| Id  | Operation                     | Name         | Rows  | Bytes | Cost (%CPU)| Time     |
+----------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT              |              |    46 |  2668 |     9  (12)| 00:00:01 |
+|*  1 |  HASH JOIN                    |              |    46 |  2668 |     9  (12)| 00:00:01 |
+|   2 |   MERGE JOIN                  |              |    49 |  2303 |     6  (17)| 00:00:01 |
+|   3 |    TABLE ACCESS BY INDEX ROWID| DIM_ACCOUNT  |    50 |   550 |     2   (0)| 00:00:01 |
+|   4 |     INDEX FULL SCAN           | SYS_C008310  |    50 |       |     1   (0)| 00:00:01 |
+|*  5 |    SORT JOIN                  |              |    49 |  1764 |     4  (25)| 00:00:01 |
+|*  6 |     TABLE ACCESS FULL         | FACT_TXN_OLD |    49 |  1764 |     3   (0)| 00:00:01 |
+|   7 |   TABLE ACCESS FULL           | DIM_ACCOUNT  |    50 |   550 |     3   (0)| 00:00:01 |
+----------------------------------------------------------------------------------------------
+ 
+Predicate Information (identified by operation id):
+---------------------------------------------------
+ 
+   1 - access("S"."ACCOUNT_ID"="T"."SRC_ACCOUNT_ID")
+       filter("T"."CURRENCY"<>"S"."CURRENCY" OR "T"."CURRENCY"<>"D"."CURRENCY")
+   5 - access("D"."ACCOUNT_ID"="T"."DEST_ACCOUNT_ID")
+       filter("D"."ACCOUNT_ID"="T"."DEST_ACCOUNT_ID")
+   6 - filter("T"."TIMESTAMP"<=TIMESTAMP' 2023-09-12 23:59:59.000000000' AND 
+              "T"."TIMESTAMP">=TIMESTAMP' 1970-01-01 00:00:00.000000000')
+ 
+Note
+-----
+   - this is an adaptive plan
+
+28 rows selected. 
+
+Elapsed: 00:00:00.022

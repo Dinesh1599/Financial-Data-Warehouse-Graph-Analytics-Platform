@@ -1,0 +1,8 @@
+
+TXN_ID                         TXN_CCY    SRC_ DEST
+------------------------------ ---------- ---- ----
+T-3223                         JPY        USD  USD 
+T-3259                         USD        EUR  INR 
+T-3189                         EUR        GBP  USD 
+
+Elapsed: 00:00:00.006

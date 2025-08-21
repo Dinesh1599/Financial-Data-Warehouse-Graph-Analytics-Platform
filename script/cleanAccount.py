@@ -43,7 +43,7 @@ def main():
         account_raw = pd.read_csv(source_path+filename)
         accounts = clean_accounts(account_raw)
         today = datetime.datetime.now().strftime("%Y%m%d") 
-        accounts.to_csv(f"../clean/account/accounts{today}.csv",index=False)
+        accounts.to_csv(f"./clean/account/accounts{today}.csv",index=False)
         print("CLEAN files written:")
         print(f"  - accounts.csv:    {len(accounts)} rows")
 

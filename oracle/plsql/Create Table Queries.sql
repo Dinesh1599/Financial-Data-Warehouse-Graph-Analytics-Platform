@@ -37,3 +37,5 @@ CREATE TABLE fact_txn (
   status            VARCHAR2(120)
 );
 
+
+SELECT * FROM fact_txn;
