@@ -46,8 +46,8 @@ def clean_transactions(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 def main():
-    source_path  = '../RAW/txn/'
-    backup_path = "../RAW/backup/txn"
+    source_path  = './RAW/txn/'
+    backup_path = "./RAW/backup/txn"
 
     if not os.path.exists(backup_path):
         os.makedirs(backup_path)

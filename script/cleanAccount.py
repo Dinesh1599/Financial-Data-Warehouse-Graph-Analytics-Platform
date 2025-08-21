@@ -32,8 +32,8 @@ def clean_accounts(df:pd.DataFrame) ->pd.DataFrame:
     return df
 
 def main():
-    source_path  = '../RAW/accounts/'
-    backup_path = "../RAW/backup/accounts"
+    source_path  = './RAW/accounts/'
+    backup_path = "./RAW/backup/accounts"
 
     if not os.path.exists(backup_path):
         os.makedirs(backup_path)

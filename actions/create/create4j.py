@@ -122,6 +122,7 @@ WITH c, row
 MATCH (t: Transaction{transaction_id:row.tid})
 MERGE (t)-[:VIA_CHANNEL]->(c)
 """
+
 queryCurrencyMerge = """
 UNWIND $rows as row
 MERGE (c:Currency {currency_type: row.currency})
@@ -138,15 +139,15 @@ MERGE (t) -[:DENOMINATED_IN]->(c)
 
 # ---- Read CSVs  TODO: Automate this
 
-customer_source_path = "../../clean/customer"
+customer_source_path = "./clean/customer"
 customer_filename = os.listdir(customer_source_path)[0]
 customer_file  = os.path.join(customer_source_path,customer_filename)
 
-account_source_path = "../../clean/account"
+account_source_path = "./clean/account"
 account_filename = os.listdir(account_source_path)[0]
 account_file  = os.path.join(account_source_path,account_filename)
 
-txn_source_path = "../../clean/txn"
+txn_source_path = "./clean/txn"
 txn_filename = os.listdir(txn_source_path)[0]
 txn_file  = os.path.join(txn_source_path,txn_filename)
 

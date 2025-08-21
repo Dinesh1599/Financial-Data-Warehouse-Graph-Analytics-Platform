@@ -51,8 +51,8 @@ def clean_customers(df: pd.DataFrame)-> pd.DataFrame:
     return df
 
 def main():
-    source_path  = '../RAW/customer/'
-    backup_path = "../RAW/backup/customer"
+    source_path  = './RAW/customer/'
+    backup_path = "./RAW/backup/customer"
 
     if not os.path.exists(backup_path):
         os.makedirs(backup_path)
