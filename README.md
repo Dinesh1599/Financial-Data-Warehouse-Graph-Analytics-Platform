@@ -19,10 +19,10 @@ This mirrors real-world Data Engineering + Oracle DBA responsibilities, with han
 ## 🏗️ Architecture
 
 ```
-                ┌────────────┐
-                │   Raw CSV  │
-                │(cust/acc/tx) 
-                └──────┬─────┘
+                ┌───────────────┐
+                │   Raw CSV     │
+                │ (cust/acc/tx) │
+                └──────┬────────┘
                        │
                  Python + Pandas
                        │
@@ -234,6 +234,7 @@ ORDER BY total_txn DESC
 LIMIT 10;
 ```
 <img width="582" height="599" alt="image" src="https://github.com/user-attachments/assets/3f91c31e-1b7b-46be-91e1-8dec79a0fd9b" />
+
 
 
 
