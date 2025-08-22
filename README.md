@@ -1,7 +1,7 @@
-﻿# 🔗 Neo4j + Oracle Data Platform
+# 🔗 Neo4j + Oracle Data Platform
 
 ## 📌 Project Summary
-- **What it is:** a dual‑target pipeline that loads the same cleaned data into **Oracle** (star schema) and **Neo4j** (graph), then demonstrates **Oracle tuning** (partitioning, indexes, MV) with **before/after evidence**.
+- **What it is:** a dual‑target pipeline that loads clean financial data into **Oracle** (star schema) and **Neo4j** (graph), then demonstrates **Oracle tuning** (partitioning, indexes, MV) with **before/after evidence**.
 - **Why it’s relevant:** mirrors common enterprise patterns in financial data platforms; aligns with skills like **Oracle performance**, **AWR/Advisors mindset**, and **scalable data infrastructure**.
 - **What you’ll see:** reproducible setup via Docker, named‑bind pandas loaders, SQL Developer workflow for baselines, and graph queries for relationship insights.
 
